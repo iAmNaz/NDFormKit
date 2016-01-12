@@ -154,7 +154,8 @@ class ViewController: UIViewController, NDFormValidationDelegate {
             }
         }
         
-        fieldValidators["5"] = [NotRequired()]
+        fieldValidators["4"] = [NDRequired(), NDEmail()]
+        fieldValidators["5"] = [NDNotRequired()]
         
         //Set the dataset to the dataset of the form
         formValidator.dataSet = rows.copy() as! NDFormDataSet
