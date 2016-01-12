@@ -7,25 +7,103 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4512F6F81C438F80006659A0 /* NDDataWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512F6F71C438F80006659A0 /* NDDataWrapperTests.swift */; };
+		4512F7001C43A68A006659A0 /* ValueToStringTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512F6FF1C43A68A006659A0 /* ValueToStringTransformer.swift */; };
+		451AE56C1C44AFD400FB332D /* NDFormDataSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */; };
+		451AE56E1C44CDC500FB332D /* NDFormSwitchFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451AE56D1C44CDC500FB332D /* NDFormSwitchFieldCell.swift */; };
+		454833181C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454833171C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift */; };
 		4551A5F11C3649D40084588C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551A5F01C3649D40084588C /* AppDelegate.swift */; };
 		4551A5F31C3649D40084588C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551A5F21C3649D40084588C /* ViewController.swift */; };
 		4551A5F61C3649D40084588C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4551A5F41C3649D40084588C /* Main.storyboard */; };
 		4551A5F81C3649D40084588C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4551A5F71C3649D40084588C /* Assets.xcassets */; };
 		4551A5FB1C3649D40084588C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4551A5F91C3649D40084588C /* LaunchScreen.storyboard */; };
+		457023891C3F7DA700DBEC23 /* NDFormKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 457023881C3F7DA700DBEC23 /* NDFormKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4570238D1C3F7DA700DBEC23 /* NDFormKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457023861C3F7DA700DBEC23 /* NDFormKit.framework */; };
+		4570238E1C3F7DA700DBEC23 /* NDFormKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 457023861C3F7DA700DBEC23 /* NDFormKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		457023991C3F7E5800DBEC23 /* NDDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457023931C3F7E5800DBEC23 /* NDDataWrapper.swift */; };
+		4570239A1C3F7E5800DBEC23 /* NDFormDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457023941C3F7E5800DBEC23 /* NDFormDataSet.swift */; };
+		4570239B1C3F7E5800DBEC23 /* NDFormProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457023951C3F7E5800DBEC23 /* NDFormProtocols.swift */; };
+		4570239D1C3F7E5800DBEC23 /* NDFormValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */; };
+		4570239E1C3F7E5800DBEC23 /* NDFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457023981C3F7E5800DBEC23 /* NDFormValidator.swift */; };
+		457023A01C3F80EB00DBEC23 /* NDFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */; };
+		45EA41171C3BC30800F023BC /* NDFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4512F6FA1C438F80006659A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4551A5E51C3649D40084588C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4551A5EC1C3649D40084588C;
+			remoteInfo = NDForm;
+		};
+		4570238B1C3F7DA700DBEC23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4551A5E51C3649D40084588C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 457023851C3F7DA700DBEC23;
+			remoteInfo = NDFormKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		457023921C3F7DA700DBEC23 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4570238E1C3F7DA700DBEC23 /* NDFormKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4512F6F51C438F7F006659A0 /* NDFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4512F6F71C438F80006659A0 /* NDDataWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDDataWrapperTests.swift; sourceTree = "<group>"; };
+		4512F6F91C438F80006659A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4512F6FF1C43A68A006659A0 /* ValueToStringTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueToStringTransformer.swift; sourceTree = "<group>"; };
+		451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormDataSetTests.swift; sourceTree = "<group>"; };
+		451AE56D1C44CDC500FB332D /* NDFormSwitchFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormSwitchFieldCell.swift; sourceTree = "<group>"; };
+		454833171C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormPasswordTextFieldCell.swift; sourceTree = "<group>"; };
 		4551A5ED1C3649D40084588C /* NDForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NDForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4551A5F01C3649D40084588C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4551A5F21C3649D40084588C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4551A5F21C3649D40084588C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4551A5F51C3649D40084588C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4551A5F71C3649D40084588C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4551A5FA1C3649D40084588C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4551A5FC1C3649D40084588C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		457023861C3F7DA700DBEC23 /* NDFormKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NDFormKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		457023881C3F7DA700DBEC23 /* NDFormKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDFormKit.h; sourceTree = "<group>"; };
+		4570238A1C3F7DA700DBEC23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		457023931C3F7E5800DBEC23 /* NDDataWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDDataWrapper.swift; sourceTree = "<group>"; };
+		457023941C3F7E5800DBEC23 /* NDFormDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormDataSet.swift; sourceTree = "<group>"; };
+		457023951C3F7E5800DBEC23 /* NDFormProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormProtocols.swift; sourceTree = "<group>"; };
+		457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormValidationRules.swift; sourceTree = "<group>"; };
+		457023981C3F7E5800DBEC23 /* NDFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormValidator.swift; sourceTree = "<group>"; };
+		4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormTableViewCell.swift; sourceTree = "<group>"; };
+		45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormTextFieldCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4512F6F21C438F7F006659A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4551A5EA1C3649D40084588C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4570238D1C3F7DA700DBEC23 /* NDFormKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		457023821C3F7DA700DBEC23 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,10 +113,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4512F6F61C438F7F006659A0 /* NDFormTests */ = {
+			isa = PBXGroup;
+			children = (
+				4512F6F71C438F80006659A0 /* NDDataWrapperTests.swift */,
+				451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */,
+				4512F6F91C438F80006659A0 /* Info.plist */,
+			);
+			path = NDFormTests;
+			sourceTree = "<group>";
+		};
 		4551A5E41C3649D40084588C = {
 			isa = PBXGroup;
 			children = (
 				4551A5EF1C3649D40084588C /* NDForm */,
+				457023871C3F7DA700DBEC23 /* NDFormKit */,
+				4512F6F61C438F7F006659A0 /* NDFormTests */,
 				4551A5EE1C3649D40084588C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				4551A5ED1C3649D40084588C /* NDForm.app */,
+				457023861C3F7DA700DBEC23 /* NDFormKit.framework */,
+				4512F6F51C438F7F006659A0 /* NDFormTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,7 +148,12 @@
 			children = (
 				4551A5F01C3649D40084588C /* AppDelegate.swift */,
 				4551A5F21C3649D40084588C /* ViewController.swift */,
+				4512F6FF1C43A68A006659A0 /* ValueToStringTransformer.swift */,
 				4551A5F41C3649D40084588C /* Main.storyboard */,
+				45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */,
+				451AE56D1C44CDC500FB332D /* NDFormSwitchFieldCell.swift */,
+				454833171C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift */,
+				4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */,
 				4551A5F71C3649D40084588C /* Assets.xcassets */,
 				4551A5F91C3649D40084588C /* LaunchScreen.storyboard */,
 				4551A5FC1C3649D40084588C /* Info.plist */,
@@ -64,9 +161,52 @@
 			path = NDForm;
 			sourceTree = "<group>";
 		};
+		457023871C3F7DA700DBEC23 /* NDFormKit */ = {
+			isa = PBXGroup;
+			children = (
+				457023881C3F7DA700DBEC23 /* NDFormKit.h */,
+				457023931C3F7E5800DBEC23 /* NDDataWrapper.swift */,
+				457023941C3F7E5800DBEC23 /* NDFormDataSet.swift */,
+				457023981C3F7E5800DBEC23 /* NDFormValidator.swift */,
+				457023951C3F7E5800DBEC23 /* NDFormProtocols.swift */,
+				457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */,
+				4570238A1C3F7DA700DBEC23 /* Info.plist */,
+			);
+			path = NDFormKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		457023831C3F7DA700DBEC23 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				457023891C3F7DA700DBEC23 /* NDFormKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4512F6F41C438F7F006659A0 /* NDFormTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4512F6FE1C438F80006659A0 /* Build configuration list for PBXNativeTarget "NDFormTests" */;
+			buildPhases = (
+				4512F6F11C438F7F006659A0 /* Sources */,
+				4512F6F21C438F7F006659A0 /* Frameworks */,
+				4512F6F31C438F7F006659A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4512F6FB1C438F80006659A0 /* PBXTargetDependency */,
+			);
+			name = NDFormTests;
+			productName = NDFormTests;
+			productReference = 4512F6F51C438F7F006659A0 /* NDFormTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4551A5EC1C3649D40084588C /* NDForm */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4551A5FF1C3649D40084588C /* Build configuration list for PBXNativeTarget "NDForm" */;
@@ -74,15 +214,35 @@
 				4551A5E91C3649D40084588C /* Sources */,
 				4551A5EA1C3649D40084588C /* Frameworks */,
 				4551A5EB1C3649D40084588C /* Resources */,
+				457023921C3F7DA700DBEC23 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4570238C1C3F7DA700DBEC23 /* PBXTargetDependency */,
 			);
 			name = NDForm;
 			productName = NDForm;
 			productReference = 4551A5ED1C3649D40084588C /* NDForm.app */;
 			productType = "com.apple.product-type.application";
+		};
+		457023851C3F7DA700DBEC23 /* NDFormKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4570238F1C3F7DA700DBEC23 /* Build configuration list for PBXNativeTarget "NDFormKit" */;
+			buildPhases = (
+				457023811C3F7DA700DBEC23 /* Sources */,
+				457023821C3F7DA700DBEC23 /* Frameworks */,
+				457023831C3F7DA700DBEC23 /* Headers */,
+				457023841C3F7DA700DBEC23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NDFormKit;
+			productName = NDFormKit;
+			productReference = 457023861C3F7DA700DBEC23 /* NDFormKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,7 +254,14 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = locomoviles.com;
 				TargetAttributes = {
+					4512F6F41C438F7F006659A0 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 4551A5EC1C3649D40084588C;
+					};
 					4551A5EC1C3649D40084588C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					457023851C3F7DA700DBEC23 = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -113,11 +280,20 @@
 			projectRoot = "";
 			targets = (
 				4551A5EC1C3649D40084588C /* NDForm */,
+				457023851C3F7DA700DBEC23 /* NDFormKit */,
+				4512F6F41C438F7F006659A0 /* NDFormTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4512F6F31C438F7F006659A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4551A5EB1C3649D40084588C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,19 +304,65 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		457023841C3F7DA700DBEC23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4512F6F11C438F7F006659A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				451AE56C1C44AFD400FB332D /* NDFormDataSetTests.swift in Sources */,
+				4512F6F81C438F80006659A0 /* NDDataWrapperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4551A5E91C3649D40084588C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454833181C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift in Sources */,
+				4512F7001C43A68A006659A0 /* ValueToStringTransformer.swift in Sources */,
 				4551A5F31C3649D40084588C /* ViewController.swift in Sources */,
+				457023A01C3F80EB00DBEC23 /* NDFormTableViewCell.swift in Sources */,
 				4551A5F11C3649D40084588C /* AppDelegate.swift in Sources */,
+				45EA41171C3BC30800F023BC /* NDFormTextFieldCell.swift in Sources */,
+				451AE56E1C44CDC500FB332D /* NDFormSwitchFieldCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		457023811C3F7DA700DBEC23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4570239E1C3F7E5800DBEC23 /* NDFormValidator.swift in Sources */,
+				4570239A1C3F7E5800DBEC23 /* NDFormDataSet.swift in Sources */,
+				457023991C3F7E5800DBEC23 /* NDDataWrapper.swift in Sources */,
+				4570239B1C3F7E5800DBEC23 /* NDFormProtocols.swift in Sources */,
+				4570239D1C3F7E5800DBEC23 /* NDFormValidationRules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4512F6FB1C438F80006659A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4551A5EC1C3649D40084588C /* NDForm */;
+			targetProxy = 4512F6FA1C438F80006659A0 /* PBXContainerItemProxy */;
+		};
+		4570238C1C3F7DA700DBEC23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 457023851C3F7DA700DBEC23 /* NDFormKit */;
+			targetProxy = 4570238B1C3F7DA700DBEC23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4551A5F41C3649D40084588C /* Main.storyboard */ = {
@@ -162,6 +384,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4512F6FC1C438F80006659A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NDFormTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naz.NDFormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NDForm.app/NDForm";
+			};
+			name = Debug;
+		};
+		4512F6FD1C438F80006659A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NDFormTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.naz.NDFormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NDForm.app/NDForm";
+			};
+			name = Release;
+		};
 		4551A5FD1C3649D40084588C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -247,6 +493,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FormValidationKit/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = NDForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naz.NDForm;
@@ -258,6 +509,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FormValidationKit/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = NDForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naz.NDForm;
@@ -265,9 +521,61 @@
 			};
 			name = Release;
 		};
+		457023901C3F7DA700DBEC23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NDFormKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.NDFormKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		457023911C3F7DA700DBEC23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NDFormKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ex.NDFormKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4512F6FE1C438F80006659A0 /* Build configuration list for PBXNativeTarget "NDFormTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4512F6FC1C438F80006659A0 /* Debug */,
+				4512F6FD1C438F80006659A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4551A5E81C3649D40084588C /* Build configuration list for PBXProject "NDForm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -284,6 +592,16 @@
 				4551A6011C3649D40084588C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4570238F1C3F7DA700DBEC23 /* Build configuration list for PBXNativeTarget "NDFormKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				457023901C3F7DA700DBEC23 /* Debug */,
+				457023911C3F7DA700DBEC23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
