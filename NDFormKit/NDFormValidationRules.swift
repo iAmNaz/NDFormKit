@@ -60,7 +60,7 @@ public class NDRegextUtility: NSObject {
 }
 
 /// A not required class
-public class NotRequired: NSObject, Validator {
+public class NDNotRequired: NSObject, Validator {
     public func validate(object: NDDataWrapper) {
 
     }
@@ -73,10 +73,12 @@ public class NotRequired: NSObject, Validator {
 /// Email format validation rule
 public class NDEmail: NSObject, Validator {
     public func validate(object: NDDataWrapper) {
-        let validEmail = NDRegextUtility.isValidFormat("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", str: object.value() as! String)
-        
-        if !validEmail {
-            object.setValidationError(NDEmail.validationError()!)
+        if let val = object.value() {
+            let validEmail = NDRegextUtility.isValidFormat("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", str: val as! String)
+            
+            if !validEmail {
+                object.setValidationError(NDEmail.validationError()!)
+            }
         }
     }
     
