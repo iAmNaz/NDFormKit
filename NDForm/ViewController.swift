@@ -189,6 +189,7 @@ class ViewController: UIViewController, NDFormValidationDelegate {
             cell.setFieldData(rowObject)
             cell.titleLabel?.text = rowObject.fieldTitle
 
+        cell.titleLabel.textColor = UIColor.blackColor()
         
         let errorBaseFormat = { (hasError: Bool) -> () in
             if hasError {
@@ -209,5 +210,11 @@ class ViewController: UIViewController, NDFormValidationDelegate {
         }
         return cell
     }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.view.endEditing(true)
+    }
+    
+    
 }
 
