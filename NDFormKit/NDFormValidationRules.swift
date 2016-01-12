@@ -33,7 +33,7 @@ public class StringUtility: NSObject {
 }
 
 /// A required implementaion of the Validator protocol
-public class NDRequired: NSObject, Validator {
+public class NDRequired: NSObject, NDValidator {
     public func validate(object: NDDataWrapper) {
         if object.value() != nil {
             if !StringUtility.stringIsNotEmpty(object.value() as! String) {
@@ -60,7 +60,7 @@ public class NDRegextUtility: NSObject {
 }
 
 /// A not required class
-public class NDNotRequired: NSObject, Validator {
+public class NDNotRequired: NSObject, NDValidator {
     public func validate(object: NDDataWrapper) {
 
     }
@@ -71,7 +71,7 @@ public class NDNotRequired: NSObject, Validator {
 }
 
 /// Email format validation rule
-public class NDEmail: NSObject, Validator {
+public class NDEmail: NSObject, NDValidator {
     public func validate(object: NDDataWrapper) {
         if let val = object.value() {
             let validEmail = NDRegextUtility.isValidFormat("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", str: val as! String)
@@ -88,7 +88,7 @@ public class NDEmail: NSObject, Validator {
 }
 
 /// Minimum character length rule
-public class NDMinimumLength: NSObject, Validator {
+public class NDMinimumLength: NSObject, NDValidator {
     var minLength: Int?
     
     public init(minimumLength: Int, validationError: NSError) {
@@ -108,7 +108,7 @@ public class NDMinimumLength: NSObject, Validator {
 }
 
 /// Maximum character length rule
-public class NDMaximumLength: NSObject, Validator {
+public class NDMaximumLength: NSObject, NDValidator {
     var maxLength: Int?
     
     public init(maximumLength: Int) {
@@ -128,7 +128,7 @@ public class NDMaximumLength: NSObject, Validator {
 }
 
 ///Exact length character rule
-public class NDExactLength: NSObject, Validator  {
+public class NDExactLength: NSObject, NDValidator  {
     var exactLength: Int?
     public init(expectedLength: Int) {
         exactLength = expectedLength
@@ -146,7 +146,7 @@ public class NDExactLength: NSObject, Validator  {
 }
 
 /// Greater than value rule
-public class NDGreaterThan: NSObject, Validator  {
+public class NDGreaterThan: NSObject, NDValidator  {
     var greaterVal: Int?
     public init(greaterValue: Int) {
         greaterVal = greaterValue
@@ -164,7 +164,7 @@ public class NDGreaterThan: NSObject, Validator  {
 }
 
 /// Less than value rule
-public class NDLessThan: NSObject, Validator  {
+public class NDLessThan: NSObject, NDValidator  {
     var lessVal: Int?
     public init(lessValue: Int) {
         lessVal = lessValue
@@ -182,7 +182,7 @@ public class NDLessThan: NSObject, Validator  {
 }
 
 /// Only numeric validation rule
-public class NDNumeric: NSObject, Validator  {
+public class NDNumeric: NSObject, NDValidator  {
     public func validate(object: NDDataWrapper) {
         if Int(object.value() as! String) != nil {
             object.setValidationError(NDNumeric.validationError()!)

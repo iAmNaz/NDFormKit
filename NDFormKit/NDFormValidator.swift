@@ -22,7 +22,7 @@ public class NDFormValidator: NSObject {
     public var delegate: NDFormValidationDelegate?
     
     /// A dictionary of assigned field validator objects
-    public var fieldValidators: [String: [Validator]]!
+    public var fieldValidators: [String: [NDValidator]]!
     
     /// If form is completely valid after a validation run
     public var isValid: Bool! {
@@ -49,7 +49,7 @@ public class NDFormValidator: NSObject {
      - Parameter dataSet: A UITableView specific data structure
      - Parameter fieldValidators: A dictionary of field validators with keys associated to data set objects
      */
-    public init(dataSet: NDFormDataSet, fieldValidators: [String: [Validator]]) {
+    public init(dataSet: NDFormDataSet, fieldValidators: [String: [NDValidator]]) {
         super.init()
         self.initQueue()
         self.fieldValidators = fieldValidators
@@ -92,7 +92,7 @@ public class NDFormValidator: NSObject {
         formQueue = dispatch_queue_create("com.ndform.form", nil)
     }
     
-    private func validateField(dataObj: NDDataWrapper, fieldValidator: Validator) {
+    private func validateField(dataObj: NDDataWrapper, fieldValidator: NDValidator) {
         fieldValidator.validate(dataObj)
         
         if dataObj.hasValidationErrors() {

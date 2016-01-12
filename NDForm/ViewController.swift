@@ -30,6 +30,9 @@ class ViewController: UIViewController, NDFormValidationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //hard coded bottom inset for the keyboard
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 250, right: 0)
+        
         //A simple value transformer instantiated
         let valueTransformer = FormStringValueToStringTransformer()
         
@@ -135,15 +138,13 @@ class ViewController: UIViewController, NDFormValidationDelegate {
         section1.append(r17)
         section1.append(r18)
         
-        
-        
         rows.addSection(section1)
         
         //Create the validator
         //Validators are created and cached in a dictionary
         //A dictionary of meta from a backend server can be used to determine what types of 
         //field validator is required for each field
-        var fieldValidators = [String: [Validator]]()
+        var fieldValidators = [String: [NDValidator]]()
 
         //Create an instance of a required validation
         let requiredValidator = NDRequired()
