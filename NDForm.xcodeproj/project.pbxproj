@@ -11,7 +11,6 @@
 		4512F7001C43A68A006659A0 /* ValueToStringTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4512F6FF1C43A68A006659A0 /* ValueToStringTransformer.swift */; };
 		451AE56C1C44AFD400FB332D /* NDFormDataSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */; };
 		451AE56E1C44CDC500FB332D /* NDFormSwitchFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451AE56D1C44CDC500FB332D /* NDFormSwitchFieldCell.swift */; };
-		451AE5A11C44F2A600FB332D /* ndformdemo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 451AE5A01C44F2A600FB332D /* ndformdemo.gif */; };
 		454833181C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454833171C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift */; };
 		4551A5F11C3649D40084588C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551A5F01C3649D40084588C /* AppDelegate.swift */; };
 		4551A5F31C3649D40084588C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4551A5F21C3649D40084588C /* ViewController.swift */; };
@@ -68,7 +67,6 @@
 		4512F6FF1C43A68A006659A0 /* ValueToStringTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueToStringTransformer.swift; sourceTree = "<group>"; };
 		451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormDataSetTests.swift; sourceTree = "<group>"; };
 		451AE56D1C44CDC500FB332D /* NDFormSwitchFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormSwitchFieldCell.swift; sourceTree = "<group>"; };
-		451AE5A01C44F2A600FB332D /* ndformdemo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ndformdemo.gif; sourceTree = "<group>"; };
 		454833171C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormPasswordTextFieldCell.swift; sourceTree = "<group>"; };
 		4551A5ED1C3649D40084588C /* NDForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NDForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4551A5F01C3649D40084588C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 		4551A5E41C3649D40084588C = {
 			isa = PBXGroup;
 			children = (
-				451AE5A01C44F2A600FB332D /* ndformdemo.gif */,
 				4551A5EF1C3649D40084588C /* NDForm */,
 				457023871C3F7DA700DBEC23 /* NDFormKit */,
 				4512F6F61C438F7F006659A0 /* NDFormTests */,
@@ -302,7 +299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4551A5FB1C3649D40084588C /* LaunchScreen.storyboard in Resources */,
-				451AE5A11C44F2A600FB332D /* ndformdemo.gif in Resources */,
 				4551A5F81C3649D40084588C /* Assets.xcassets in Resources */,
 				4551A5F61C3649D40084588C /* Main.storyboard in Resources */,
 			);
