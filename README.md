@@ -3,6 +3,13 @@ A simple form validation and data wrapper framework
 
 The purpose of building this framework is to have the ability to quickly build a form where customized field validation can be easily integrated. The framework was written in Swift using Xcode 7.2.
 
+### Some of the benefits
+- Form level feedback if form is valid or not
+- Instant feedback on a field level so you could update your UI or call other functionalities
+- Set user defined validation
+- Set User defined errors(NSError)
+ 
+
 ## In the box
 **NDDataWrapper**
 
