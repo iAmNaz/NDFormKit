@@ -25,7 +25,7 @@ Facilitates the validation of individual validation objects. Form validation res
 
 **NDValidator Protocol**
 
-Protocol for user defined validation objects.
+Protocol for user defined validation rules and errors.
 
 **NDFormValidationDelegate**
 
