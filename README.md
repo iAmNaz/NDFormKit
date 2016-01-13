@@ -5,7 +5,7 @@ The purpose of building this framework is to have the ability to quickly build a
 
 The framework is NOT a form UI builder while it is what you'll need to manage your data and validation.
 
-### Some of the benefits
+### Some of the benefits in using are
 - Instant form and field level feedback if form is valid or not
 - Set user defined validation rules
 - Set user defined errors(NSError)
