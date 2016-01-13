@@ -6,10 +6,9 @@ The purpose of building this framework is to have the ability to quickly build a
 The framework is NOT a form UI builder while it is what you'll need to manage your data and validation.
 
 ### Some of the benefits
-- Form level feedback if form is valid or not
-- Instant feedback on a field level so you could update your UI or call other functionalities
-- Set user defined validation
-- Set User defined errors(NSError)
+- Instant form and field level feedback if form is valid or not
+- Set user defined validation rules
+- Set user defined errors(NSError)
 
 ## In the box
 **NDDataWrapper**
