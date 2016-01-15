@@ -1,7 +1,14 @@
 # NDFormKit
-A simple form validation and data wrapper framework
+A simple framework for simple form validation.
 
-The purpose of building this framework is to have the ability to quickly build a form where customized field validation can be easily integrated. The framework was written in Swift using Xcode 7.2.
+The purpose of building this framework is to have the ability to quickly build a form where customized field validation can be easily integrated. The framework was written in Swift using Xcode 7.2. 
+
+The framework is NOT a form UI builder while it is what you'll need to manage your data and validation.
+
+### Some of the benefits
+- Instant form and field level feedback if form is valid or not
+- Set user defined validation rules
+- Set user defined errors(NSError)
 
 ## In the box
 **NDDataWrapper**
@@ -18,7 +25,7 @@ Facilitates the validation of individual validation objects. Form validation res
 
 **NDValidator Protocol**
 
-Protocol for user defined validation objects.
+Protocol for user defined validation rules and errors.
 
 **NDFormValidationDelegate**
 
