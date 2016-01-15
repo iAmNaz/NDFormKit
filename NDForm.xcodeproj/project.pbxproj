@@ -18,6 +18,7 @@
 		4551A5F61C3649D40084588C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4551A5F41C3649D40084588C /* Main.storyboard */; };
 		4551A5F81C3649D40084588C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4551A5F71C3649D40084588C /* Assets.xcassets */; };
 		4551A5FB1C3649D40084588C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4551A5F91C3649D40084588C /* LaunchScreen.storyboard */; };
+		4564AE211C49028700D7AC1E /* NDFormPrivateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4564AE201C49028700D7AC1E /* NDFormPrivateUtilities.swift */; };
 		457023891C3F7DA700DBEC23 /* NDFormKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 457023881C3F7DA700DBEC23 /* NDFormKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4570238D1C3F7DA700DBEC23 /* NDFormKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 457023861C3F7DA700DBEC23 /* NDFormKit.framework */; };
 		4570238E1C3F7DA700DBEC23 /* NDFormKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 457023861C3F7DA700DBEC23 /* NDFormKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -63,28 +64,29 @@
 
 /* Begin PBXFileReference section */
 		4512F6F51C438F7F006659A0 /* NDFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4512F6F71C438F80006659A0 /* NDDataWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NDDataWrapperTests.swift; sourceTree = "<group>"; };
+		4512F6F71C438F80006659A0 /* NDDataWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDDataWrapperTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4512F6F91C438F80006659A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4512F6FF1C43A68A006659A0 /* ValueToStringTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueToStringTransformer.swift; sourceTree = "<group>"; };
-		451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormDataSetTests.swift; sourceTree = "<group>"; };
-		451AE56D1C44CDC500FB332D /* NDFormSwitchFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormSwitchFieldCell.swift; sourceTree = "<group>"; };
+		4512F6FF1C43A68A006659A0 /* ValueToStringTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ValueToStringTransformer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormDataSetTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		451AE56D1C44CDC500FB332D /* NDFormSwitchFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormSwitchFieldCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		451AE5A41C44F66000FB332D /* ndformdemo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ndformdemo.gif; sourceTree = "<group>"; };
-		454833171C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormPasswordTextFieldCell.swift; sourceTree = "<group>"; };
+		454833171C3D23C1006ACF94 /* NDFormPasswordTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormPasswordTextFieldCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4551A5ED1C3649D40084588C /* NDForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NDForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4551A5F01C3649D40084588C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4551A5F01C3649D40084588C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4551A5F21C3649D40084588C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4551A5F51C3649D40084588C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4551A5F71C3649D40084588C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4551A5FA1C3649D40084588C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4551A5FC1C3649D40084588C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4564AE201C49028700D7AC1E /* NDFormPrivateUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormPrivateUtilities.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		457023861C3F7DA700DBEC23 /* NDFormKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NDFormKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		457023881C3F7DA700DBEC23 /* NDFormKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDFormKit.h; sourceTree = "<group>"; };
+		457023881C3F7DA700DBEC23 /* NDFormKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NDFormKit.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4570238A1C3F7DA700DBEC23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		457023931C3F7E5800DBEC23 /* NDDataWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDDataWrapper.swift; sourceTree = "<group>"; };
-		457023941C3F7E5800DBEC23 /* NDFormDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormDataSet.swift; sourceTree = "<group>"; };
-		457023951C3F7E5800DBEC23 /* NDFormProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormProtocols.swift; sourceTree = "<group>"; };
-		457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormValidationRules.swift; sourceTree = "<group>"; };
-		457023981C3F7E5800DBEC23 /* NDFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormValidator.swift; sourceTree = "<group>"; };
+		457023931C3F7E5800DBEC23 /* NDDataWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDDataWrapper.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		457023941C3F7E5800DBEC23 /* NDFormDataSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormDataSet.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		457023951C3F7E5800DBEC23 /* NDFormProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormProtocols.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormValidationRules.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		457023981C3F7E5800DBEC23 /* NDFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormTableViewCell.swift; sourceTree = "<group>"; };
 		45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormTextFieldCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 				457023981C3F7E5800DBEC23 /* NDFormValidator.swift */,
 				457023951C3F7E5800DBEC23 /* NDFormProtocols.swift */,
 				457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */,
+				4564AE201C49028700D7AC1E /* NDFormPrivateUtilities.swift */,
 				4570238A1C3F7DA700DBEC23 /* Info.plist */,
 			);
 			path = NDFormKit;
@@ -349,6 +352,7 @@
 				4570239A1C3F7E5800DBEC23 /* NDFormDataSet.swift in Sources */,
 				457023991C3F7E5800DBEC23 /* NDDataWrapper.swift in Sources */,
 				4570239B1C3F7E5800DBEC23 /* NDFormProtocols.swift in Sources */,
+				4564AE211C49028700D7AC1E /* NDFormPrivateUtilities.swift in Sources */,
 				4570239D1C3F7E5800DBEC23 /* NDFormValidationRules.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +507,7 @@
 					"$(PROJECT_DIR)/FormValidationKit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = NDForm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naz.NDForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -519,6 +524,7 @@
 					"$(PROJECT_DIR)/FormValidationKit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = NDForm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.naz.NDForm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -536,6 +542,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NDFormKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ex.NDFormKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -558,6 +565,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = NDFormKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ex.NDFormKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
