@@ -22,8 +22,8 @@ func createError(description: String, failureReason: String, recoverySuggestion:
 }
 
 /// Class for string specific utility methods
-public class StringUtility: NSObject {
-    public class func stringIsNotEmpty(str: String) -> Bool {
+class StringUtility: NSObject {
+    class func stringIsNotEmpty(str: String) -> Bool {
         let cleanString = str.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         if cleanString.isEmpty {
             return false
