@@ -155,6 +155,7 @@ class ViewController: UIViewController, NDFormValidationDelegate {
             }
         }
         
+        //Use a different field validator for 4 & 5 objects
         fieldValidators["4"] = [NDRequired(), NDEmail()]
         fieldValidators["5"] = [NDNotRequired()]
         
