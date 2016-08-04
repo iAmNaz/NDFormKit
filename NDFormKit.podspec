@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.author    = "iAmNaz"
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/iAmNaz/NDFormKit", :tag => "#{s.version}"}
-  s.source_files  = 'NDFormKit/*.{swift}'
+  s.source_files  = 'NDFormKit/*.{swift, h}'
   s.requires_arc = true
 end

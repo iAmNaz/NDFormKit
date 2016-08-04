@@ -38,3 +38,12 @@ You can refer to the demo project you will find after you obtain a copy. I have 
 ## Installation
 
 There are many ways to add the framework to a project such as creating a workspace and having both your project and the framework project side by side but it takes a lot of steps to accomplish. The easiest would be to open your project and dragging the framework project file into your project then from Build Phases > Link Binary with Libraries locate the framework and add it.
+
+***Using in your Objective-C project***
+
+In your podfile add
+pod 'NDFormKit', :git => 'https://github.com/iAmNaz/NDFormKit', :tag => '0.0.1'
+
+Then in your Objective-C import
+'#import <NDFormKit/NDFormKit-Swift.h>'
+
