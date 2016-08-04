@@ -188,7 +188,7 @@ class ViewController: UIViewController, NDFormValidationDelegate {
         let rowObject = rows.objectAtIndexPath(indexPath)
         let cellKey = rowObject.fieldType
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellKey.name(), forIndexPath: indexPath) as! NDFormTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellKey!.name(), forIndexPath: indexPath) as! NDFormTableViewCell
             cell.setFieldData(rowObject)
             cell.titleLabel?.text = rowObject.fieldTitle
 
