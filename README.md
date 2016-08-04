@@ -45,5 +45,5 @@ In your podfile add
 pod 'NDFormKit', :git => 'https://github.com/iAmNaz/NDFormKit', :tag => '0.0.1'
 
 Then in your Objective-C import
-'#import greater than NDFormKit/NDFormKit-Swift.h greater than '
+'#import \<NDFormKit/NDFormKit-Swift.h\>'
 
