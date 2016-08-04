@@ -13,8 +13,28 @@ import Foundation
  Field types to classify NDDataWrappers.
  Normally the field type corresponds with the type of input.
  */
-public enum NDFieldType : String {
+@objc public enum NDFieldType : Int {
     case TextType, TextViewType, NumericType, PasswordType, PasswordConfirmType, EmailType, BooleanType, CalendarDateType, CalendarTimeType, CalendarDateTimeType, PickerType, MultiSelectSubListType, SubListType, PhotoType
+    
+        public func name () -> String {
+            switch self {
+                case TextType: return "TextType"
+                case TextViewType: return "TextViewType"
+                case NumericType: return "NumericType"
+                case PasswordType: return "PasswordType"
+                case PasswordConfirmType: return "PasswordConfirmType"
+                case EmailType: return "EmailType"
+                case BooleanType: return "BooleanType"
+                case CalendarDateType: return "CalendarDateType"
+                case CalendarTimeType: return "CalendarTimeType"
+                case CalendarDateTimeType: return "CalendarDateTimeType"
+                case PickerType: return "PickerType"
+                case MultiSelectSubListType: return "MultiSelectSubListType"
+                case SubListType: return "SubListType"
+                case PhotoType: return "PhotoType"
+        }
+    }
+    
 }
 
 /**

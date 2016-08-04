@@ -186,9 +186,9 @@ class ViewController: UIViewController, NDFormValidationDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let rowObject = rows.objectAtIndexPath(indexPath)
-        let cellKey = rowObject.fieldType.rawValue
+        let cellKey = rowObject.fieldType
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellKey, forIndexPath: indexPath) as! NDFormTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellKey.name(), forIndexPath: indexPath) as! NDFormTableViewCell
             cell.setFieldData(rowObject)
             cell.titleLabel?.text = rowObject.fieldTitle
 
