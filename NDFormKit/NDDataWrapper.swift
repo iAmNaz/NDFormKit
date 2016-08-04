@@ -51,6 +51,8 @@ public class NDDataWrapper: NSObject, NSCopying {
     public var index: Int!
     /// A NDFieldType type
     public var fieldType: NDFieldType!
+    ///Field Type for ObjC
+    public var fieldTypeObj: Int!
     /// The field's title
     public var fieldTitle: String!
     /// A unique string tag
