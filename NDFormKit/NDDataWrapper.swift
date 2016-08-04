@@ -50,9 +50,7 @@ public class NDDataWrapper: NSObject, NSCopying {
     /// An integer index for sorting operations
     public var index: Int!
     /// A NDFieldType type
-    public var fieldType: NDFieldType?
-    ///Field Type for ObjC
-    public var fieldTypeObj: Int!
+    public var fieldType: NDFieldType = NDFieldType.TextType
     /// The field's title
     public var fieldTitle: String!
     /// A unique string tag
