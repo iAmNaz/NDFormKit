@@ -9,13 +9,13 @@
 import UIKit
 
 /// Protocol for user defined validation objects
-public protocol NDValidator {
+@objc public protocol NDValidator {
     func validate(object: NDDataWrapper)
     static func validationError() -> NSError?
 }
 
 /// Protocol for form validation events
-public protocol NDFormValidationDelegate {
+@objc public protocol NDFormValidationDelegate {
     /**
      Method called when the form validation process completes
      
@@ -24,6 +24,6 @@ public protocol NDFormValidationDelegate {
     func didValidateForm(form: NDFormValidator)
 }
 
-public protocol NDValueToStringTransformer {
+@objc public protocol NDValueToStringTransformer {
     func toString(value: AnyObject?) -> String
 }
