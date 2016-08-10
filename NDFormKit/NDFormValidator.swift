@@ -100,6 +100,6 @@ public class NDFormValidator: NSObject {
         }
         
         let hasErrors = dataObj.hasValidationErrors()
-        formValid = formValid! && !hasErrors
+        formValid = formValid && !hasErrors
     }
 }
