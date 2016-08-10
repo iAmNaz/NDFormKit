@@ -25,12 +25,12 @@ public class NDFormValidator: NSObject {
     public var fieldValidators: [String: [NDValidator]]!
     
     /// If form is completely valid after a validation run
-    public var isValid: Bool! {
+    public var isValid: Bool {
         return formValid
     }
     
     /// Current validation state of the form
-    private var formValid: Bool!
+    private var formValid = false
     
     /// A dictionary of errors by data wrapper tags
     public var errors: [String : [NSError]]?
