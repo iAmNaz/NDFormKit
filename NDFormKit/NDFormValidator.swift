@@ -30,7 +30,7 @@ public class NDFormValidator: NSObject {
     }
     
     /// Current validation state of the form
-    private var formValid = false
+    public var formValid = false
     
     /// A dictionary of errors by data wrapper tags
     public var errors: [String : [NSError]]?
