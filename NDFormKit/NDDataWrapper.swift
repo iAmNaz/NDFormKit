@@ -14,7 +14,7 @@ import Foundation
  Normally the field type corresponds with the type of input.
  */
 @objc public enum NDFieldType : Int {
-    case TextType, TextViewType, NumericType, PasswordType, PasswordConfirmType, EmailType, BooleanType, CalendarDateType, CalendarTimeType, CalendarDateTimeType, PickerType, MultiSelectSubListType, SubListType, PhotoType
+    case TextType, TextViewType, NumericType, PasswordType, PasswordConfirmType, EmailType, BooleanType, CalendarDateType, CalendarTimeType, CalendarDateTimeType, PickerType, MultiSelectSubListType, SubListType, PhotoType, URLType
     
         public func name () -> String {
             switch self {
@@ -32,6 +32,7 @@ import Foundation
                 case MultiSelectSubListType: return "MultiSelectSubListType"
                 case SubListType: return "SubListType"
                 case PhotoType: return "PhotoType"
+                case URLType: return "URLType"
         }
     }
     
@@ -61,6 +62,9 @@ public class NDDataWrapper: NSObject, NSCopying {
     public var isRequired: Bool! {
         return required
     }
+    
+    ///Prevent validation call when a value is set
+    public var autoValidateWhenValueSet = false
     
     public var valueTransformer: NDValueToStringTransformer?
     
@@ -175,7 +179,9 @@ public class NDDataWrapper: NSObject, NSCopying {
      */
     public func setValue(val: AnyObject?) {
         fieldValue = val
-        formValidator.validate()
+        if autoValidateWhenValueSet {
+            formValidator.validate()
+        }
     }
     
     /**
