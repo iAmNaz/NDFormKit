@@ -55,7 +55,7 @@ public class NDDataWrapper: NSObject, NSCopying {
     /// The field's title
     public var fieldTitle: String!
     /// The field's title
-    public var fieldPlaceholder = "Placeholder"
+    public var fieldPlaceholder = ""
     /// A unique string tag
     public var tag: String!
     /// Additional data that is related to the object value
