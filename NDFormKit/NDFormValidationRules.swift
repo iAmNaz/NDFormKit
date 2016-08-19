@@ -36,6 +36,24 @@ public class NDNotRequired: NSObject, NDValidator {
     }
 }
 
+/// URL format validation rule
+public class NDURL: NSObject, NDValidator {
+    public func validate(object: NDDataWrapper) {
+        if let val = object.value() {
+            let validEmail = NDRegextUtility.isValidFormat("[A-Za-z]+://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+", str: val as! String)
+            
+            if !validEmail {
+                object.setValidationError(NDEmail.validationError()!)
+            }
+        }
+    }
+    
+    public class func validationError() -> NSError? {
+        return createError("Invalid url", failureReason: "Not a valid url", recoverySuggestion: "Enter a valid url")
+    }
+}
+
+
 /// Email format validation rule
 public class NDEmail: NSObject, NDValidator {
     public func validate(object: NDDataWrapper) {
