@@ -71,6 +71,16 @@ class NDDataWrapperTests: XCTestCase {
         XCTAssertNotNil(object.fieldValidationErrors())
     }
     
+    func testFieldPlaceholderIsSame() {
+        let form = NDFormValidator()
+        let object = NDDataWrapper(tag: "1", title: "title", value: nil, form: form)
+        object.fieldPlaceholder = "test";
+        let error = NSError(domain: "dm", code: 1, userInfo: nil)
+        object.setValidationError(error)
+        
+        XCTAssertTrue(object.fieldPlaceholder == "test" )
+    }
+    
     func testReturnCorrectError() {
         let form = NDFormValidator()
         let object = NDDataWrapper(tag: "1", title: "title", value: nil, form: form)

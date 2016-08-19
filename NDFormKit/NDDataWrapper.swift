@@ -54,6 +54,8 @@ public class NDDataWrapper: NSObject, NSCopying {
     public var fieldType: NDFieldType = NDFieldType.TextType
     /// The field's title
     public var fieldTitle: String!
+    /// The field's title
+    public var fieldPlaceholder = "Placeholder"
     /// A unique string tag
     public var tag: String!
     /// Additional data that is related to the object value
