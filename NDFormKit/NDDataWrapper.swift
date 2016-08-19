@@ -66,7 +66,7 @@ public class NDDataWrapper: NSObject, NSCopying {
     }
     
     ///Prevent validation call when a value is set
-    public var autoValidateWhenValueSet = false
+    public var autoValidateWhenValueSet = true
     
     public var valueTransformer: NDValueToStringTransformer?
     

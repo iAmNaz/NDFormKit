@@ -30,6 +30,7 @@
 		457023A01C3F80EB00DBEC23 /* NDFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */; };
 		458D96951D66CA7900FB6B01 /* FormValidationRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D96941D66CA7900FB6B01 /* FormValidationRulesTests.swift */; };
 		45EA41171C3BC30800F023BC /* NDFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */; };
+		45ECCB841D66EAA600AD8374 /* NDFormValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45ECCB831D66EAA600AD8374 /* NDFormValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormTableViewCell.swift; sourceTree = "<group>"; };
 		458D96941D66CA7900FB6B01 /* FormValidationRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidationRulesTests.swift; sourceTree = "<group>"; };
 		45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormTextFieldCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		45ECCB831D66EAA600AD8374 /* NDFormValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				4512F6F71C438F80006659A0 /* NDDataWrapperTests.swift */,
 				458D96941D66CA7900FB6B01 /* FormValidationRulesTests.swift */,
 				451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */,
+				45ECCB831D66EAA600AD8374 /* NDFormValidatorTests.swift */,
 				4512F6F91C438F80006659A0 /* Info.plist */,
 			);
 			path = NDFormTests;
@@ -328,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45ECCB841D66EAA600AD8374 /* NDFormValidatorTests.swift in Sources */,
 				451AE56C1C44AFD400FB332D /* NDFormDataSetTests.swift in Sources */,
 				4512F6F81C438F80006659A0 /* NDDataWrapperTests.swift in Sources */,
 				458D96951D66CA7900FB6B01 /* FormValidationRulesTests.swift in Sources */,

@@ -30,7 +30,7 @@ class FormValidationRulesTests: XCTestCase {
         let formValidator = NDFormValidator()
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
-        field.setValue("http://www.google.com")
+        
         field.fieldType = NDFieldType.URLType
         
 
@@ -42,7 +42,7 @@ class FormValidationRulesTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        formValidator.validate()
+        field.setValue("http://www.google.com")
 
         XCTAssertFalse(field.hasValidationErrors())
     }
@@ -55,7 +55,7 @@ class FormValidationRulesTests: XCTestCase {
         let formValidator = NDFormValidator()
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
-        field.setValue("rtmp//:www.google.com")
+       
         field.fieldType = NDFieldType.URLType
         
         
@@ -67,7 +67,7 @@ class FormValidationRulesTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        formValidator.validate()
+         field.setValue("rtmp//:www.google.com")
         
         XCTAssertTrue(field.hasValidationErrors())
     }
@@ -80,7 +80,7 @@ class FormValidationRulesTests: XCTestCase {
         let formValidator = NDFormValidator()
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
-        field.setValue("rtmp://www.google.com")
+        
         field.fieldType = NDFieldType.URLType
         
         
@@ -92,8 +92,7 @@ class FormValidationRulesTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        formValidator.validate()
-        
+        field.setValue("rtmp://www.google.com")
         XCTAssertFalse(field.hasValidationErrors())
     }
     
@@ -105,7 +104,7 @@ class FormValidationRulesTests: XCTestCase {
         let formValidator = NDFormValidator()
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
-        field.setValue("rtmp://192.168.1.1")
+        
         field.fieldType = NDFieldType.URLType
         
         
@@ -117,7 +116,7 @@ class FormValidationRulesTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        formValidator.validate()
+        field.setValue("rtmp://192.168.1.1")
         
         XCTAssertFalse(field.hasValidationErrors())
     }
@@ -130,7 +129,7 @@ class FormValidationRulesTests: XCTestCase {
         let formValidator = NDFormValidator()
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
-        field.setValue("rtmp://192.168.1.1/live")
+        
         field.fieldType = NDFieldType.URLType
         
         
@@ -142,7 +141,7 @@ class FormValidationRulesTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        formValidator.validate()
+        field.setValue("rtmp://192.168.1.1/live")
         
         XCTAssertFalse(field.hasValidationErrors())
     }
@@ -155,7 +154,7 @@ class FormValidationRulesTests: XCTestCase {
         let formValidator = NDFormValidator()
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
-        field.setValue("rtmp://username:passwrod@192.168.1.1/live")
+        
         field.fieldType = NDFieldType.URLType
         
         
@@ -167,7 +166,7 @@ class FormValidationRulesTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        formValidator.validate()
+        field.setValue("rtmp://username:passwrod@192.168.1.1/live")
         
         XCTAssertTrue(field.hasValidationErrors())
     }
@@ -180,7 +179,7 @@ class FormValidationRulesTests: XCTestCase {
         let formValidator = NDFormValidator()
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
-        field.setValue("http//:www.google.com")
+        
         field.fieldType = NDFieldType.URLType
         
         
@@ -192,7 +191,7 @@ class FormValidationRulesTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        formValidator.validate()
+        field.setValue("http//:www.google.com")
         
         XCTAssertTrue(field.hasValidationErrors())
     }
