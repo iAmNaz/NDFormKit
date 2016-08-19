@@ -28,6 +28,7 @@
 		4570239D1C3F7E5800DBEC23 /* NDFormValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */; };
 		4570239E1C3F7E5800DBEC23 /* NDFormValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457023981C3F7E5800DBEC23 /* NDFormValidator.swift */; };
 		457023A01C3F80EB00DBEC23 /* NDFormTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */; };
+		458D96951D66CA7900FB6B01 /* FormValidationRulesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458D96941D66CA7900FB6B01 /* FormValidationRulesTests.swift */; };
 		45EA41171C3BC30800F023BC /* NDFormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		457023971C3F7E5800DBEC23 /* NDFormValidationRules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormValidationRules.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		457023981C3F7E5800DBEC23 /* NDFormValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormValidator.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		4570239F1C3F80EB00DBEC23 /* NDFormTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDFormTableViewCell.swift; sourceTree = "<group>"; };
+		458D96941D66CA7900FB6B01 /* FormValidationRulesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValidationRulesTests.swift; sourceTree = "<group>"; };
 		45EA41161C3BC30800F023BC /* NDFormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NDFormTextFieldCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				4512F6F71C438F80006659A0 /* NDDataWrapperTests.swift */,
+				458D96941D66CA7900FB6B01 /* FormValidationRulesTests.swift */,
 				451AE56B1C44AFD400FB332D /* NDFormDataSetTests.swift */,
 				4512F6F91C438F80006659A0 /* Info.plist */,
 			);
@@ -327,6 +330,7 @@
 			files = (
 				451AE56C1C44AFD400FB332D /* NDFormDataSetTests.swift in Sources */,
 				4512F6F81C438F80006659A0 /* NDDataWrapperTests.swift in Sources */,
+				458D96951D66CA7900FB6B01 /* FormValidationRulesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
