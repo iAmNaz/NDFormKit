@@ -40,7 +40,7 @@ public class NDNotRequired: NSObject, NDValidator {
 public class NDURL: NSObject, NDValidator {
     public func validate(object: NDDataWrapper) {
         if let val = object.value() {
-            let validEmail = NDRegextUtility.isValidFormat("[A-Za-z]+://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+", str: val as! String)
+            let validEmail = NDRegextUtility.isValidFormat("\\w+:\\/\\/(([a-z0-9|-]+\\.*[a-z0-9|-]+\\.[a-z]+)|(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))(\\/)?(.+)?", str: val as! String)
             
             if !validEmail {
                 object.setValidationError(NDEmail.validationError()!)

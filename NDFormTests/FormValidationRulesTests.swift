@@ -195,4 +195,129 @@ class FormValidationRulesTests: XCTestCase {
         
         XCTAssertTrue(field.hasValidationErrors())
     }
+    
+    func testValidIPHostURL() {
+        let rows = NDFormDataSet()
+        
+        var section1 = [NDDataWrapper]()
+        var fieldValidators = [String: [NDValidator]]()
+        let formValidator = NDFormValidator()
+        
+        let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
+        
+        field.fieldType = NDFieldType.URLType
+        
+        
+        section1.append(field)
+        
+        rows.addSection(section1)
+        
+        fieldValidators["1"] = [NDURL()]
+        formValidator.dataSet = rows
+        
+        formValidator.fieldValidators = fieldValidators
+        field.setValue("http://192.168.1.1/test")
+        
+        XCTAssertFalse(field.hasValidationErrors())
+    }
+    
+    func testInValidIPHostURL() {
+        let rows = NDFormDataSet()
+        
+        var section1 = [NDDataWrapper]()
+        var fieldValidators = [String: [NDValidator]]()
+        let formValidator = NDFormValidator()
+        
+        let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
+        
+        field.fieldType = NDFieldType.URLType
+        
+        
+        section1.append(field)
+        
+        rows.addSection(section1)
+        
+        fieldValidators["1"] = [NDURL()]
+        formValidator.dataSet = rows
+        
+        formValidator.fieldValidators = fieldValidators
+        field.setValue("http://192.168.1.256/test")
+        
+        XCTAssertFalse(field.hasValidationErrors())
+    }
+    
+    func testValidIPHostURLNoSlash() {
+        let rows = NDFormDataSet()
+        
+        var section1 = [NDDataWrapper]()
+        var fieldValidators = [String: [NDValidator]]()
+        let formValidator = NDFormValidator()
+        
+        let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
+        
+        field.fieldType = NDFieldType.URLType
+        
+        
+        section1.append(field)
+        
+        rows.addSection(section1)
+        
+        fieldValidators["1"] = [NDURL()]
+        formValidator.dataSet = rows
+        
+        formValidator.fieldValidators = fieldValidators
+        field.setValue("http://192.168.1.255")
+        
+        XCTAssertFalse(field.hasValidationErrors())
+    }
+    
+    func testValidHostWithSubDomailURLNoSlash() {
+        let rows = NDFormDataSet()
+        
+        var section1 = [NDDataWrapper]()
+        var fieldValidators = [String: [NDValidator]]()
+        let formValidator = NDFormValidator()
+        
+        let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
+        
+        field.fieldType = NDFieldType.URLType
+        
+        
+        section1.append(field)
+        
+        rows.addSection(section1)
+        
+        fieldValidators["1"] = [NDURL()]
+        formValidator.dataSet = rows
+        
+        formValidator.fieldValidators = fieldValidators
+        field.setValue("http://sub.host.com")
+        
+        XCTAssertFalse(field.hasValidationErrors())
+    }
+    
+    func testValidHostWithSubDomailURL() {
+        let rows = NDFormDataSet()
+        
+        var section1 = [NDDataWrapper]()
+        var fieldValidators = [String: [NDValidator]]()
+        let formValidator = NDFormValidator()
+        
+        let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
+        
+        field.fieldType = NDFieldType.URLType
+        
+        
+        section1.append(field)
+        
+        rows.addSection(section1)
+        
+        fieldValidators["1"] = [NDURL()]
+        formValidator.dataSet = rows
+        
+        formValidator.fieldValidators = fieldValidators
+        field.setValue("rtmps://sub.host.com/test?q=1")
+        
+        XCTAssertFalse(field.hasValidationErrors())
+    }
 }
