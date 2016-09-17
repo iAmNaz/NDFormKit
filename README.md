@@ -1,7 +1,7 @@
 # NDFormKit
 A simple framework for simple form validation.
 
-The purpose of building this framework is to have the ability to quickly build a form where customized field validation can be easily integrated. The framework was written in Swift using Xcode 7.2. 
+The purpose of building this framework is to have the ability to quickly build a form where customized field validation can be easily integrated. The framework was written in Swift using Xcode 7.2 while it could be built on XCode 8 too.
 
 The framework is NOT a form UI builder while it is what you'll need to manage your data and validation.
 
