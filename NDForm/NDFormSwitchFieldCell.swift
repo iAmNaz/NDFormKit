@@ -13,12 +13,12 @@ class NDFormSwitchFieldCell: NDFormTableViewCell {
 
     @IBOutlet weak var switchButton: UISwitch!
     
-    @IBAction func didSwitch(sender: AnyObject) {
-        self.fieldData().setValue(switchButton.on)
+    @IBAction func didSwitch(_ sender: AnyObject) {
+        self.fieldData().setValue(switchButton.isOn as AnyObject)
         displayBoolState()
     }
     
-    override func setDisplayValue(forObject: NDDataWrapper) {
+    override func setDisplayValue(_ forObject: NDDataWrapper) {
         displayBoolState()
     }
     
@@ -30,10 +30,10 @@ class NDFormSwitchFieldCell: NDFormTableViewCell {
             }else{
                 titleLabel.text = fieldData().fieldTitle + "\("(OFF)")"
             }
-            switchButton.on = switched
+            switchButton.isOn = switched
         }else{
             titleLabel.text = fieldData().fieldTitle + "\("(OFF)")"
-            switchButton.on = false
+            switchButton.isOn = false
         }
     }
 }

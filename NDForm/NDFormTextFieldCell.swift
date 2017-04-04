@@ -13,17 +13,17 @@ class NDFormTextFieldCell: NDFormTableViewCell {
 
     @IBOutlet weak var textField: UITextField!
     
-    func textFieldBegunEditing(textField: UITextField) {
+    func textFieldBegunEditing(_ textField: UITextField) {
         titleLabel.textColor = titleLabel.tintColor
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        titleLabel.textColor = UIColor.blackColor()
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        titleLabel.textColor = UIColor.black
         
         let text = textField.text
         
         if text!.isEmpty {
-            titleLabel.textColor = UIColor.redColor()
+            titleLabel.textColor = UIColor.red
         }
     }
     
@@ -31,23 +31,23 @@ class NDFormTextFieldCell: NDFormTableViewCell {
         super.awakeFromNib()
     }
     
-    @IBAction func isChangingText(sender: AnyObject) {
+    @IBAction func isChangingText(_ sender: AnyObject) {
         let text = textField.text
         
         if text!.isEmpty {
             self.fieldData().setValue(nil)
         }else{
-            self.fieldData().setValue(text)
+            self.fieldData().setValue(text as AnyObject)
         }
         //replace with delegate pattern
 
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    override func setDisplayValue(forObject: NDDataWrapper) {
+    override func setDisplayValue(_ forObject: NDDataWrapper) {
         self.textField.text = forObject.displayText()
     }
 }

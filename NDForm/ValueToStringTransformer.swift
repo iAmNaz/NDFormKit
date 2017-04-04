@@ -10,7 +10,7 @@ import UIKit
 import NDFormKit
 
 class ValueToStringTransformer: NSObject, NDValueToStringTransformer {
-    func toString(value: AnyObject?) -> String {
+    func toString(_ value: AnyObject?) -> String {
         if value != nil {
             return value as! String
         }else{

@@ -7,6 +7,30 @@
 //
 
 import Foundation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 
 /**
@@ -14,25 +38,25 @@ import Foundation
  Normally the field type corresponds with the type of input.
  */
 @objc public enum NDFieldType : Int {
-    case TextType, TextViewType, NumericType, PasswordType, PasswordConfirmType, EmailType, BooleanType, CalendarDateType, CalendarTimeType, CalendarDateTimeType, PickerType, MultiSelectSubListType, SubListType, PhotoType, URLType
+    case textType, textViewType, numericType, passwordType, passwordConfirmType, emailType, booleanType, calendarDateType, calendarTimeType, calendarDateTimeType, pickerType, multiSelectSubListType, subListType, photoType, urlType
     
         public func name () -> String {
             switch self {
-                case TextType: return "TextType"
-                case TextViewType: return "TextViewType"
-                case NumericType: return "NumericType"
-                case PasswordType: return "PasswordType"
-                case PasswordConfirmType: return "PasswordConfirmType"
-                case EmailType: return "EmailType"
-                case BooleanType: return "BooleanType"
-                case CalendarDateType: return "CalendarDateType"
-                case CalendarTimeType: return "CalendarTimeType"
-                case CalendarDateTimeType: return "CalendarDateTimeType"
-                case PickerType: return "PickerType"
-                case MultiSelectSubListType: return "MultiSelectSubListType"
-                case SubListType: return "SubListType"
-                case PhotoType: return "PhotoType"
-                case URLType: return "URLType"
+                case .textType: return "TextType"
+                case .textViewType: return "TextViewType"
+                case .numericType: return "NumericType"
+                case .passwordType: return "PasswordType"
+                case .passwordConfirmType: return "PasswordConfirmType"
+                case .emailType: return "EmailType"
+                case .booleanType: return "BooleanType"
+                case .calendarDateType: return "CalendarDateType"
+                case .calendarTimeType: return "CalendarTimeType"
+                case .calendarDateTimeType: return "CalendarDateTimeType"
+                case .pickerType: return "PickerType"
+                case .multiSelectSubListType: return "MultiSelectSubListType"
+                case .subListType: return "SubListType"
+                case .photoType: return "PhotoType"
+                case .urlType: return "URLType"
         }
     }
     
@@ -43,34 +67,34 @@ import Foundation
  
  The intention is to have a uniform data structure and methods in managing values.
 */
-public class NDDataWrapper: NSObject, NSCopying {
+open class NDDataWrapper: NSObject, NSCopying {
     /// Where to set the call back code which is called when field is validated
-    public var wasValidated: ((valid: Bool) -> ())?
+    open var wasValidated: ((_ valid: Bool) -> ())?
     /// A list of NDDataWrapper objects for list type fields
-    public var subListValues: [NDDataWrapper]!
+    open var subListValues: [NDDataWrapper]!
     /// An integer index for sorting operations
-    public var index: Int!
+    open var index: Int!
     /// A NDFieldType type
-    public var fieldType: NDFieldType = NDFieldType.TextType
+    open var fieldType: NDFieldType = NDFieldType.textType
     /// The field's title
-    public var fieldTitle: String!
+    open var fieldTitle: String!
     /// The field's title
-    public var fieldPlaceholder = ""
+    open var fieldPlaceholder = ""
     /// A unique string tag
-    public var tag: String!
+    open var tag: String!
     /// Additional data that is related to the object value
-    public var valueInfo: AnyObject?
+    open var valueInfo: AnyObject?
     /// Getter for the required property
-    public var isRequired: Bool! {
+    open var isRequired: Bool! {
         return required
     }
     
     ///Prevent validation call when a value is set
-    public var autoValidateWhenValueSet = true
+    open var autoValidateWhenValueSet = true
     
-    public var valueTransformer: NDValueToStringTransformer?
+    open var valueTransformer: NDValueToStringTransformer?
     
-    override public var description: String {
+    override open var description: String {
         if self.value() != nil {
             return "\(self.fieldDisplayText): \(self.value()!)"
         }else{
@@ -78,11 +102,11 @@ public class NDDataWrapper: NSObject, NSCopying {
         }
     }
     
-    private var fieldValue: AnyObject?
-    private var fieldDisplayText = ""
-    private var validationErrors:[NSError]?
-    private var formValidator: NDFormValidator!
-    private var required = false
+    fileprivate var fieldValue: AnyObject?
+    fileprivate var fieldDisplayText = ""
+    fileprivate var validationErrors:[NSError]?
+    fileprivate var formValidator: NDFormValidator!
+    fileprivate var required = false
     
     /**
         Initializes the data wrapper with initial property values.
@@ -107,7 +131,7 @@ public class NDDataWrapper: NSObject, NSCopying {
         super.init()
     }
     
-    public func copyWithZone(zone: NSZone) -> AnyObject {
+    open func copy(with zone: NSZone?) -> Any {
         let copy = NDDataWrapper()
         copy.subListValues = self.subListValues
         copy.tag = self.tag
@@ -121,7 +145,7 @@ public class NDDataWrapper: NSObject, NSCopying {
     }
     
     //MARK: Field Error
-    public func hasValidationErrors() -> Bool {
+    open func hasValidationErrors() -> Bool {
         if self.validationErrors != nil {
             return self.validationErrors?.count > 0
         }else{
@@ -134,14 +158,14 @@ public class NDDataWrapper: NSObject, NSCopying {
      
      - Returns: An array of NSError
      */
-    public func fieldValidationErrors() -> [NSError]? {
+    open func fieldValidationErrors() -> [NSError]? {
         return validationErrors
     }
     
     /**
      A setter for validation errors as NSError arrays
      */
-    public func setValidationError(error: NSError) {
+    open func setValidationError(_ error: NSError) {
         if self.validationErrors != nil {
             self.validationErrors?.append(error)
         }else{
@@ -162,7 +186,7 @@ public class NDDataWrapper: NSObject, NSCopying {
      
      - Returns: The field value as AnyObject
      */
-    public func value() -> AnyObject? {
+    open func value() -> AnyObject? {
         //return the copy instead???
         return fieldValue
     }
@@ -172,14 +196,14 @@ public class NDDataWrapper: NSObject, NSCopying {
      
      - Returns: Bool
      */
-    public func filled() -> Bool {
+    open func filled() -> Bool {
         return fieldValue != nil
     }
     
     /**
      Data wrapper value setter
      */
-    public func setValue(val: AnyObject?) {
+    open func setValue(_ val: AnyObject?) {
         fieldValue = val
         if autoValidateWhenValueSet {
             formValidator.validate()
@@ -190,7 +214,7 @@ public class NDDataWrapper: NSObject, NSCopying {
      Returns value formatted to string by a user provided transformer or the string value if value is a string
      - Returns: String
      */
-    public func displayText() -> String {
+    open func displayText() -> String {
         if value() != nil {
             if valueTransformer != nil {
                 return valueTransformer!.toString(self.value()!)

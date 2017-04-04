@@ -10,12 +10,12 @@ import Foundation
 
 let NDFormErrorDomain = "com.ndform.errors"
 
-func errorInfo(description: String, failureReason: String, recoverySuggestion: String) -> [String: String] {
+func errorInfo(_ description: String, failureReason: String, recoverySuggestion: String) -> [String: String] {
     let userInfo = [NSLocalizedDescriptionKey : NSLocalizedString(description, comment: ""), NSLocalizedFailureReasonErrorKey : NSLocalizedString(failureReason, comment: ""), NSLocalizedRecoverySuggestionErrorKey : NSLocalizedString(recoverySuggestion, comment: "")]
     return userInfo
 }
 
-func createError(description: String, failureReason: String, recoverySuggestion: String) -> NSError {
+func createError(_ description: String, failureReason: String, recoverySuggestion: String) -> NSError {
     let errorDict = errorInfo(description, failureReason: failureReason, recoverySuggestion: recoverySuggestion)
     let error = NSError(domain: NDFormErrorDomain, code: -1, userInfo: errorDict)
     return error
@@ -23,8 +23,8 @@ func createError(description: String, failureReason: String, recoverySuggestion:
 
 /// Class for string specific utility methods
 class StringUtility: NSObject {
-    class func stringIsNotEmpty(str: String) -> Bool {
-        let cleanString = str.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+    class func stringIsNotEmpty(_ str: String) -> Bool {
+        let cleanString = str.trimmingCharacters(in: CharacterSet.whitespaces)
         if cleanString.isEmpty {
             return false
         }
@@ -34,10 +34,10 @@ class StringUtility: NSObject {
 
 /// Regular expression utility
 class NDRegextUtility: NSObject {
-    class func isValidFormat(regEx:String, str:String) -> Bool {
+    class func isValidFormat(_ regEx:String, str:String) -> Bool {
         let emailRegEx = regEx
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluateWithObject(str)
+        let result = emailTest.evaluate(with: str)
         return result
     }
 }

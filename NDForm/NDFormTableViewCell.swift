@@ -9,16 +9,16 @@
 import UIKit
 import NDFormKit
 
-public class NDFormTableViewCell: UITableViewCell {
-    private var _fieldData: NDDataWrapper!
+open class NDFormTableViewCell: UITableViewCell {
+    fileprivate var _fieldData: NDDataWrapper!
     @IBOutlet weak var titleLabel: UILabel!
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override public func setSelected(selected: Bool, animated: Bool) {
+    override open func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
@@ -26,15 +26,15 @@ public class NDFormTableViewCell: UITableViewCell {
         
     }
     
-    public func setDisplayValue(forObject: NDDataWrapper) {
+    open func setDisplayValue(_ forObject: NDDataWrapper) {
         
     }
     
-    public func setFieldData(simpleData: NDDataWrapper) {
+    open func setFieldData(_ simpleData: NDDataWrapper) {
         _fieldData = simpleData
     }
     
-    public func fieldData() -> NDDataWrapper {
+    open func fieldData() -> NDDataWrapper {
         return _fieldData
     }
 }

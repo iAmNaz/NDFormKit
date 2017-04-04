@@ -10,7 +10,7 @@ import UIKit
 
 /// Protocol for user defined validation objects
 @objc public protocol NDValidator {
-    func validate(object: NDDataWrapper)
+    func validate(_ object: NDDataWrapper)
     static func validationError() -> NSError?
 }
 
@@ -21,9 +21,9 @@ import UIKit
      
      - Parameter form: A reference to the current form
     */
-    func didValidateForm(form: NDFormValidator)
+    func didValidateForm(_ form: NDFormValidator)
 }
 
 @objc public protocol NDValueToStringTransformer {
-    func toString(value: AnyObject?) -> String
+    func toString(_ value: AnyObject?) -> String
 }

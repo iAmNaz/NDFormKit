@@ -13,30 +13,30 @@ import UIKit
  
  Form validation results can be handled by delegate objects conformating to the NDFormValidationDelegate protocol.
 */
-public class NDFormValidator: NSObject {
+open class NDFormValidator: NSObject {
 
     /// The form dataset used by the UITableView
-    public var dataSet: NDFormDataSet!
+    open var dataSet: NDFormDataSet!
     
     /// The form validation delegate
-    public var delegate: NDFormValidationDelegate?
+    open var delegate: NDFormValidationDelegate?
     
     /// A dictionary of assigned field validator objects
-    public var fieldValidators: [String: [NDValidator]]!
+    open var fieldValidators: [String: [NDValidator]]!
     
     /// If form is completely valid after a validation run
-    public var isValid: Bool {
+    open var isValid: Bool {
         return formValid
     }
     
     /// Current validation state of the form
-    public var formValid = false
+    open var formValid = false
     
     /// A dictionary of errors by data wrapper tags
-    public var errors: [String : [NSError]]?
+    open var errors: [String : [NSError]]?
     
     /// Process validation on this queue
-    private var formQueue: dispatch_queue_t!
+    fileprivate var formQueue: DispatchQueue!
     
     override public init() {
         super.init()
@@ -63,11 +63,11 @@ public class NDFormValidator: NSObject {
      
      Once the validation has completed the delegate methods are invoked
     */
-    public func validate() {
+    open func validate() {
         errors = [String : [NSError]]()
         formValid = true
         
-        dispatch_sync(formQueue) { () -> Void in
+        formQueue.sync { () -> Void in
             for section in self.dataSet.rows {
                 for dataObj in section {
                     dataObj.clearValidationErrors()
@@ -77,9 +77,9 @@ public class NDFormValidator: NSObject {
                         self.validateField(dataObj, fieldValidator: fieldValidator)
                     }
                     
-                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    DispatchQueue.main.async(execute: { () -> Void in
                         //custom UI can be added to this block
-                        dataObj.wasValidated?(valid: !dataObj.hasValidationErrors())
+                        dataObj.wasValidated?(!dataObj.hasValidationErrors())
                     })
                 }
             }
@@ -88,11 +88,11 @@ public class NDFormValidator: NSObject {
     }
     
     // Initializes the form queue
-    private func initQueue() {
-        formQueue = dispatch_queue_create("com.ndform.form", nil)
+    fileprivate func initQueue() {
+        formQueue = DispatchQueue(label: "com.ndform.form", attributes: [])
     }
     
-    private func validateField(dataObj: NDDataWrapper, fieldValidator: NDValidator) {
+    fileprivate func validateField(_ dataObj: NDDataWrapper, fieldValidator: NDValidator) {
         fieldValidator.validate(dataObj)
         
         if dataObj.hasValidationErrors() {

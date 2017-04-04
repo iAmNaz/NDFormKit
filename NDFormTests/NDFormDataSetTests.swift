@@ -23,10 +23,10 @@ class NDFormDataSetTests: XCTestCase {
         formValidator = NDFormValidator()
         
         r1 = NDDataWrapper(tag: "1", title: "First Name", value: nil, form: formValidator)
-        r1.fieldType = NDFieldType.TextType
+        r1.fieldType = NDFieldType.textType
         
         let r2 = NDDataWrapper(tag: "2", title: "Last Name", value: nil, form: formValidator)
-        r2.fieldType = NDFieldType.TextType
+        r2.fieldType = NDFieldType.textType
         
         section1.append(r1)
         section1.append(r2)
@@ -52,7 +52,7 @@ class NDFormDataSetTests: XCTestCase {
     }
     
     func testFetchObjectIsSame() {
-        XCTAssertEqual(r1, dataSet.objectAtIndexPath(NSIndexPath(forItem: 0, inSection: 0)))
+        XCTAssertEqual(r1, dataSet.objectAtIndexPath(IndexPath(item: 0, section: 0)))
     }
     
     func testFetchObjectWithTag() {
@@ -62,10 +62,10 @@ class NDFormDataSetTests: XCTestCase {
     func test2SectionCount() {
         var section2 = [NDDataWrapper]()
         let s1 = NDDataWrapper(tag: "12", title: "First Name", value: nil, form: formValidator)
-        s1.fieldType = NDFieldType.TextType
+        s1.fieldType = NDFieldType.textType
         
         let s2 = NDDataWrapper(tag: "13", title: "Last Name", value: nil, form: formValidator)
-        s2.fieldType = NDFieldType.TextType
+        s2.fieldType = NDFieldType.textType
         
         section2.append(s1)
         section2.append(s2)
@@ -84,7 +84,7 @@ class NDFormDataSetTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

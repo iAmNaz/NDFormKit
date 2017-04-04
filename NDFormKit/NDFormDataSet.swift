@@ -9,19 +9,19 @@
 import UIKit
 
 /// This class makes it convenient to organize data for UITableViews
-public class NDFormDataSet: NSObject, NSCopying {
+open class NDFormDataSet: NSObject, NSCopying {
     /**
      A multidimensional array of NDDataWrappers. The structure is synonymous to UITableView's section and rows.
     */
-    public var rows:[[NDDataWrapper]]!
+    open var rows:[[NDDataWrapper]]!
     /**
      Adding a new row is done on a different queue
     */
-    private var dataSetQueue: dispatch_queue_t!
+    fileprivate var dataSetQueue: DispatchQueue!
     /**
      NSMapTable can hold keys and values with weak references, in such a way that entries are removed when either the key or value is deallocated
      */
-    private var objectCache:NSMapTable!
+    fileprivate var objectCache:NSMapTable<AnyObject, AnyObject>!
     
     public override init() {
         super.init()
@@ -36,8 +36,8 @@ public class NDFormDataSet: NSObject, NSCopying {
      - Parameter tag: Fetch an object using its tag
      - Returns: NDDataWrapper
     */
-    public func objectWithTag(tag: String) -> NDDataWrapper? {
-        return objectCache.objectForKey(tag) as? NDDataWrapper
+    open func objectWithTag(_ tag: String) -> NDDataWrapper? {
+        return objectCache.object(forKey: tag as AnyObject) as? NDDataWrapper
     }
     
     /**
@@ -46,8 +46,8 @@ public class NDFormDataSet: NSObject, NSCopying {
      - Parameter section: An array of NDDataWrapper added to the dataset
      - Returns: Void
     */
-    public func addSection(section: [NDDataWrapper]) {
-        dispatch_sync(dataSetQueue) { () -> Void in
+    open func addSection(_ section: [NDDataWrapper]) {
+        dataSetQueue.sync { () -> Void in
             self.rows.append(section)
             self.tagAndStoreInDictionary()
         }
@@ -58,11 +58,11 @@ public class NDFormDataSet: NSObject, NSCopying {
      - Parameter section: Section number
      - Returns: Array of NDDataWrapper
     */
-    public func getSection(section: Int) -> [NDDataWrapper] {
+    open func getSection(_ section: Int) -> [NDDataWrapper] {
         return rows[section]
     }
     
-    public func copyWithZone(zone: NSZone) -> AnyObject {
+    open func copy(with zone: NSZone?) -> Any {
         let copy = NDFormDataSet()
         copy.rows = self.rows
         copy.objectCache = self.objectCache
@@ -75,7 +75,7 @@ public class NDFormDataSet: NSObject, NSCopying {
      - Parameter indexPath: Indexpath of object to fetch
      - Returns: NDDataWrapper
     */
-    public func objectAtIndexPath(indexPath: NSIndexPath) -> NDDataWrapper {
+    open func objectAtIndexPath(_ indexPath: IndexPath) -> NDDataWrapper {
         return rows[indexPath.section][indexPath.row]
     }
     
@@ -85,7 +85,7 @@ public class NDFormDataSet: NSObject, NSCopying {
      - Parameter section: The section number
      - Returns: Int
     */
-    public func numberOfObjectsInSection(section: Int) -> Int {
+    open func numberOfObjectsInSection(_ section: Int) -> Int {
         return rows[section].count
     }
     
@@ -93,7 +93,7 @@ public class NDFormDataSet: NSObject, NSCopying {
      Returns the number of sections in the dataset
      - Returns: Int
     */
-    public func numberOfSections() -> Int {
+    open func numberOfSections() -> Int {
         return rows.count
     }
     
@@ -102,7 +102,7 @@ public class NDFormDataSet: NSObject, NSCopying {
      
      - Parameter indexPath: The indexpath of the object to b removed
      */
-    public func removeObjectAtIndexPath(indexPath: NSIndexPath){}
+    open func removeObjectAtIndexPath(_ indexPath: IndexPath){}
     
     /**
      Call this method to move an object from one
@@ -110,17 +110,17 @@ public class NDFormDataSet: NSObject, NSCopying {
      - Parameter fromIndexPath: The current indexPath of the object
      - Parameter toNewIndexPath: The final indexPath of the object
      */
-    public func moveObjectFromIndexPath(fromIndexPath: NSIndexPath, toNewIndexPath: NSIndexPath){}
+    open func moveObjectFromIndexPath(_ fromIndexPath: IndexPath, toNewIndexPath: IndexPath){}
     
-    private func initQueue() {
-        dataSetQueue = dispatch_queue_create("com.ndform.dataset", nil)
+    fileprivate func initQueue() {
+        dataSetQueue = DispatchQueue(label: "com.ndform.dataset", attributes: [])
     }
     
     //store object references in dict
-    private func tagAndStoreInDictionary() {
+    fileprivate func tagAndStoreInDictionary() {
         for sectionObjects in rows {
             for objWrapper in sectionObjects {
-                objectCache.setObject(objWrapper, forKey: objWrapper.tag)
+                objectCache.setObject(objWrapper, forKey: objWrapper.tag as AnyObject)
             }
         }
     }

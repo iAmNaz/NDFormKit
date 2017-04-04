@@ -10,7 +10,7 @@ import XCTest
 import NDFormKit
 
 class StringValueToStringTransformer: NSObject, NDValueToStringTransformer {
-    func toString(value: AnyObject?) -> String {
+    func toString(_ value: AnyObject?) -> String {
         if value != nil {
             return value as! String
         }else{
@@ -20,7 +20,7 @@ class StringValueToStringTransformer: NSObject, NDValueToStringTransformer {
 }
 
 class IntValueToStringTransformer: NSObject, NDValueToStringTransformer {
-    func toString(value: AnyObject?) -> String {
+    func toString(_ value: AnyObject?) -> String {
         if value != nil {
             return "\(value!)"
         }else{
@@ -98,32 +98,32 @@ class NDDataWrapperTests: XCTestCase {
     
     func testValueIsNotNil() {
         let form = NDFormValidator()
-        let object = NDDataWrapper(tag: "1", title: "title", value: "1", form: form)
+        let object = NDDataWrapper(tag: "1", title: "title", value: "1" as AnyObject, form: form)
         XCTAssertNotNil(object.value())
     }
     
     func testValueIsTheSameAsSetValue() {
         let form = NDFormValidator()
-        let object = NDDataWrapper(tag: "1", title: "title", value: "1234", form: form)
+        let object = NDDataWrapper(tag: "1", title: "title", value: "1234" as AnyObject, form: form)
         XCTAssertEqual(object.value() as? String, "1234")
     }
     
     func testValueIsNOTTheSameAsSetValue() {
         let form = NDFormValidator()
-        let object = NDDataWrapper(tag: "1", title: "title", value: "ABCD", form: form)
+        let object = NDDataWrapper(tag: "1", title: "title", value: "ABCD" as AnyObject, form: form)
         XCTAssertNotEqual(object.value() as? String, "1234")
     }
     
     func testTestDisplayTextIsEquivalentString() {
         let form = NDFormValidator()
-        let object = NDDataWrapper(tag: "1", title: "title", value: 1, form: form)
+        let object = NDDataWrapper(tag: "1", title: "title", value: 1 as AnyObject, form: form)
         object.valueTransformer = IntValueToStringTransformer()
         XCTAssertEqual(object.displayText(), "1")
     }
     
     func testTestDisplayTextStringIsEquivalentString() {
         let form = NDFormValidator()
-        let object = NDDataWrapper(tag: "1", title: "title", value: "A value", form: form)
+        let object = NDDataWrapper(tag: "1", title: "title", value: "A value" as AnyObject, form: form)
         XCTAssertEqual(object.displayText(), "A value")
     }
     

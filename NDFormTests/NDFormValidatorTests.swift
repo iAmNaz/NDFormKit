@@ -32,7 +32,7 @@ class NDFormValidatorTests: XCTestCase {
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
         
-        field.fieldType = NDFieldType.URLType
+        field.fieldType = NDFieldType.urlType
         
         
         section1.append(field)
@@ -43,7 +43,7 @@ class NDFormValidatorTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        field.setValue("http://www.google.com")
+        field.setValue("http://www.google.com" as AnyObject)
         
         XCTAssertTrue(formValidator.isValid)
     }
@@ -57,7 +57,7 @@ class NDFormValidatorTests: XCTestCase {
         
         let field = NDDataWrapper(tag: "1", title: "Row7", value: nil, form: formValidator)
         
-        field.fieldType = NDFieldType.URLType
+        field.fieldType = NDFieldType.urlType
         
         
         section1.append(field)
@@ -68,7 +68,7 @@ class NDFormValidatorTests: XCTestCase {
         formValidator.dataSet = rows
         
         formValidator.fieldValidators = fieldValidators
-        field.setValue("http//:www.google.com")
+        field.setValue("http//:www.google.com" as AnyObject)
         
         XCTAssertFalse(formValidator.isValid)
     }

@@ -11,7 +11,7 @@ import NDFormKit
 
 //A user customized value transformer
 class FormStringValueToStringTransformer: NSObject, NDValueToStringTransformer {
-    func toString(value: AnyObject?) -> String {
+    func toString(_ value: AnyObject?) -> String {
         if value != nil {
             return value as! String
         }else{
@@ -48,75 +48,75 @@ class ViewController: UIViewController, NDFormValidationDelegate {
         //Create the first section
         var section1 = [NDDataWrapper]()
         let r1 = NDDataWrapper(tag: "1", title: "First Name", value: nil, form: formValidator)
-            r1.fieldType = NDFieldType.TextType
+            r1.fieldType = NDFieldType.textType
             r1.valueTransformer = valueTransformer
         
         let r2 = NDDataWrapper(tag: "2", title: "Last Name", value: nil, form: formValidator)
-            r2.fieldType = NDFieldType.TextType
+            r2.fieldType = NDFieldType.textType
             r2.valueTransformer = valueTransformer
         
         let r3 = NDDataWrapper(tag: "3", title: "Password", value: nil, form: formValidator)
-            r3.fieldType = NDFieldType.PasswordType
+            r3.fieldType = NDFieldType.passwordType
             r1.valueTransformer = valueTransformer
         
         let r4 = NDDataWrapper(tag: "4", title: "Email", value: nil, form: formValidator)
-            r4.fieldType = NDFieldType.EmailType
+            r4.fieldType = NDFieldType.emailType
             r4.valueTransformer = valueTransformer
         
         let r5 = NDDataWrapper(tag: "5", title: "Row5", value: nil, form: formValidator)
-            r5.fieldType = NDFieldType.BooleanType
+            r5.fieldType = NDFieldType.booleanType
             r5.valueTransformer = valueTransformer
         
         let r6 = NDDataWrapper(tag: "6", title: "Row6", value: nil, form: formValidator)
-            r6.fieldType = NDFieldType.NumericType
+            r6.fieldType = NDFieldType.numericType
             r6.valueTransformer = valueTransformer
         
         let r7 = NDDataWrapper(tag: "7", title: "Row7", value: nil, form: formValidator)
-            r7.fieldType = NDFieldType.NumericType
+            r7.fieldType = NDFieldType.numericType
             r7.valueTransformer = valueTransformer
         
         let r8 = NDDataWrapper(tag: "8", title: "Row8", value: nil, form: formValidator)
-            r8.fieldType = NDFieldType.NumericType
+            r8.fieldType = NDFieldType.numericType
             r8.valueTransformer = valueTransformer
         
         let r9 = NDDataWrapper(tag: "9", title: "Row9", value: nil, form: formValidator)
-            r9.fieldType = NDFieldType.NumericType
+            r9.fieldType = NDFieldType.numericType
             r9.valueTransformer = valueTransformer
         
         let r10 = NDDataWrapper(tag: "10", title: "Row10", value: nil, form: formValidator)
-            r10.fieldType = NDFieldType.NumericType
+            r10.fieldType = NDFieldType.numericType
             r10.valueTransformer = valueTransformer
         
         let r11 = NDDataWrapper(tag: "11", title: "Ro11", value: nil, form: formValidator)
-            r11.fieldType = NDFieldType.NumericType
+            r11.fieldType = NDFieldType.numericType
             r11.valueTransformer = valueTransformer
         
         let r12 = NDDataWrapper(tag: "12", title: "Row12", value: nil, form: formValidator)
-            r12.fieldType = NDFieldType.NumericType
+            r12.fieldType = NDFieldType.numericType
             r12.valueTransformer = valueTransformer
         
         let r13 = NDDataWrapper(tag: "13", title: "Row13", value: nil, form: formValidator)
-            r13.fieldType = NDFieldType.NumericType
+            r13.fieldType = NDFieldType.numericType
             r13.valueTransformer = valueTransformer
         
         let r14 = NDDataWrapper(tag: "14", title: "Row14", value: nil, form: formValidator)
-            r14.fieldType = NDFieldType.NumericType
+            r14.fieldType = NDFieldType.numericType
             r14.valueTransformer = valueTransformer
         
         let r15 = NDDataWrapper(tag: "15", title: "Row15", value: nil, form: formValidator)
-            r15.fieldType = NDFieldType.NumericType
+            r15.fieldType = NDFieldType.numericType
             r15.valueTransformer = valueTransformer
         
         let r16 = NDDataWrapper(tag: "16", title: "Row16", value: nil, form: formValidator)
-            r16.fieldType = NDFieldType.NumericType
+            r16.fieldType = NDFieldType.numericType
             r1.valueTransformer = valueTransformer
         
         let r17 = NDDataWrapper(tag: "17", title: "Ro17", value: nil, form: formValidator)
-            r17.fieldType = NDFieldType.NumericType
+            r17.fieldType = NDFieldType.numericType
             r17.valueTransformer = valueTransformer
         
         let r18 = NDDataWrapper(tag: "18", title: "Row18", value: nil, form: formValidator)
-            r18.fieldType = NDFieldType.NumericType
+            r18.fieldType = NDFieldType.numericType
             r18.valueTransformer = valueTransformer
         
         section1.append(r1)
@@ -171,8 +171,8 @@ class ViewController: UIViewController, NDFormValidationDelegate {
     }
 
     //Form delegate method
-    func didValidateForm(form: NDFormValidator) {
-        saveButton.enabled = form.isValid
+    func didValidateForm(_ form: NDFormValidator) {
+        saveButton.isEnabled = form.isValid
     }
     
     override func didReceiveMemoryWarning() {
@@ -180,25 +180,25 @@ class ViewController: UIViewController, NDFormValidationDelegate {
     }
 
     //DataSource
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rows.numberOfObjectsInSection(section)
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let rowObject = rows.objectAtIndexPath(indexPath)
         let cellKey = rowObject.fieldType
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellKey.name(), forIndexPath: indexPath) as! NDFormTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellKey.name(), for: indexPath) as! NDFormTableViewCell
             cell.setFieldData(rowObject)
             cell.titleLabel?.text = rowObject.fieldTitle
 
-        cell.titleLabel.textColor = UIColor.blackColor()
+        cell.titleLabel.textColor = UIColor.black
         
         let errorBaseFormat = { (hasError: Bool) -> () in
             if hasError {
-                cell.titleLabel.textColor = UIColor.redColor()
+                cell.titleLabel.textColor = UIColor.red
             }else{
-                cell.titleLabel.textColor = UIColor.blackColor()
+                cell.titleLabel.textColor = UIColor.black
             }
         }
         //Format the title field if there is an error
@@ -214,7 +214,7 @@ class ViewController: UIViewController, NDFormValidationDelegate {
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath) {
         self.view.endEditing(true)
     }
     
