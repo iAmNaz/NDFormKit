@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NDFormKit"
-  s.version      = "0.0.1"
+  s.version      = "0.0.4"
   s.summary      = "NDFormKit Form Validation"
   s.description  = "Tools to make form validation easy"
   s.homepage     = "https://github.com/iAmNaz/NDFormKit"
